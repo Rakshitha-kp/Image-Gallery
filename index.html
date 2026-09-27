@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Gallery</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>Image Gallery</h1>
+        <p>Search, filter, view and favorite images</p>
+    </header>
+
+    <main>
+
+        <form class="controls" id="filterForm">
+
+            <div class="control-group">
+                <label for="search">Search Images</label>
+                <input
+                    type="search"
+                    id="search"
+                    placeholder="Search by image name..."
+                >
+            </div>
+
+            <div class="control-group">
+                <label for="category">Category</label>
+
+                <select id="category">
+                    <option value="all">All Categories</option>
+                    <option value="nature">Nature</option>
+                    <option value="city">City</option>
+                    <option value="animals">Animals</option>
+                    <option value="travel">Travel</option>
+                </select>
+            </div>
+
+        </form>
+
+        <section aria-label="Image Gallery">
+
+            <div class="gallery" id="gallery"></div>
+
+            <div class="empty-state" id="emptyState">
+                <h2>No Images Found</h2>
+                <p>Try another search term or category.</p>
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- Lightbox -->
+
+    <div class="lightbox" id="lightbox">
+
+        <div class="lightbox-content">
+
+            <button class="close" id="closeBtn">
+                &times;
+            </button>
+
+            <button class="prev" id="prevBtn">
+                &#10094;
+            </button>
+
+            <img id="lightboxImage" src="" alt="">
+
+            <button class="next" id="nextBtn">
+                &#10095;
+            </button>
+
+            <div class="lightbox-title" id="lightboxTitle"></div>
+
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
