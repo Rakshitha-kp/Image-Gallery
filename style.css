@@ -1,0 +1,258 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f6f8;
+    color: #222;
+}
+
+
+header {
+    background: #222;
+    color: white;
+    padding: 25px 20px;
+    text-align: center;
+}
+
+header h1 {
+    margin-bottom: 8px;
+}
+
+header p {
+    color: #ccc;
+}
+
+
+main {
+    max-width: 1200px;
+    margin: auto;
+    padding: 25px 20px;
+}
+
+
+
+.controls {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-bottom: 25px;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.control-group {
+    flex: 1;
+    min-width: 200px;
+}
+
+label {
+    display: block;
+    margin-bottom: 7px;
+    font-weight: bold;
+}
+
+input,
+select,
+button {
+    font: inherit;
+}
+
+input,
+select {
+    width: 100%;
+    padding: 11px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    outline: none;
+}
+
+input:focus,
+select:focus {
+    border-color: #555;
+}
+
+
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.card {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+
+
+.image-container {
+    position: relative;
+    cursor: pointer;
+}
+
+.image-container img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    display: block;
+}
+
+
+.favorite-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+
+    border: none;
+    background: white;
+
+    width: 38px;
+    height: 38px;
+
+    border-radius: 50%;
+    cursor: pointer;
+
+    font-size: 20px;
+}
+
+.favorite-btn:hover {
+    background: #eee;
+}
+
+.favorite-btn.active {
+    color: red;
+}
+
+
+
+.card-content {
+    padding: 15px;
+}
+
+.card-content h3 {
+    margin-bottom: 5px;
+}
+
+.category {
+    color: #777;
+    font-size: 14px;
+}
+
+.empty-state {
+    display: none;
+    text-align: center;
+    padding: 50px 20px;
+    background: white;
+    border-radius: 10px;
+}
+
+.empty-state.show {
+    display: block;
+}
+
+
+.lightbox {
+    display: none;
+
+    position: fixed;
+
+
+    background: rgba(0, 0, 0, 0.9);
+
+    
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px;
+}
+
+.lightbox.show {
+    display: flex;
+}
+
+.lightbox-content {
+    position: relative;
+    max-width: 900px;
+    width: 100%;
+    text-align: center;
+}
+
+.lightbox img {
+    max-width: 100%;
+    max-height: 75vh;
+    border-radius: 8px;
+}
+
+.lightbox-title {
+    color: white;
+    margin-top: 12px;
+    font-size: 20px;
+}
+
+.close,
+.prev,
+.next {
+    position: absolute;
+
+    border: none;
+
+    background: rgba(255, 255, 255, 0.2);
+
+    color: white;
+
+    cursor: pointer;
+
+    border-radius: 50%;
+}
+
+.close {
+    top: -45px;
+    right: 0;
+
+    width: 40px;
+    height: 40px;
+
+    font-size: 24px;
+}
+
+.prev,
+.next {
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    width: 50px;
+    height: 50px;
+
+    font-size: 30px;
+}
+
+.prev {
+    left: -70px;
+}
+
+.next {
+    right: -70px;
+}
+
+.close:hover,
+.prev:hover,
+.next:hover {
+    background: rgba(255, 255, 255, 0.4);
+}
+
