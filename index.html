@@ -4,84 +4,104 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Image Gallery</title>
-
     <link rel="stylesheet" href="style.css">
-    
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
 </head>
-
 <body>
 
-    <header>
+<header class="header">
+    <div class="header-content">
         <h1>Image Gallery</h1>
-        <p>Search, filter, view and favorite images</p>
-    </header>
+        <p>Search, filter and save your favorite images</p>
+    </div>
+</header>
 
-    <main>
+<main>
 
-        <form class="controls" id="filterForm">
+  
+    <section class="controls-section">
+        <form id="filterForm" class="controls">
 
-            <div class="control-group">
-                <label for="search">Search Images</label>
+            <div class="form-group">
+                <label for="searchInput">Search Images</label>
                 <input
                     type="search"
-                    id="search"
+                    id="searchInput"
                     placeholder="Search by image name..."
+                    autocomplete="off"
                 >
             </div>
 
-            <div class="control-group">
-                <label for="category">Category</label>
-
-                <select id="category">
+            <div class="form-group">
+                <label for="categoryFilter">Category</label>
+                <select id="categoryFilter">
                     <option value="all">All Categories</option>
                     <option value="nature">Nature</option>
-                    <option value="city">City</option>
                     <option value="animals">Animals</option>
+                    <option value="technology">Technology</option>
                     <option value="travel">Travel</option>
+                    <option value="food">Food</option>
                 </select>
             </div>
 
+            <button type="button" id="resetBtn" class="reset-btn">
+                Reset
+            </button>
+
         </form>
+    </section>
 
-        <section aria-label="Image Gallery">
+  
+    <section class="gallery-section">
+        <div class="section-header">
+            <h2>Gallery</h2>
+            <span id="imageCount">0 images</span>
+        </div>
 
-            <div class="gallery" id="gallery"></div>
+        <div id="gallery" class="gallery"></div>
 
-            <div class="empty-state" id="emptyState">
-                <h2>No Images Found</h2>
-                <p>Try another search term or category.</p>
-            </div>
+        <div id="emptyState" class="empty-state hidden">
+            <h3>No images found</h3>
+            <p>Try changing your search or category filter.</p>
+        </div>
+    </section>
 
-        </section>
-
-    </main>
+</main>
 
 
-    <div class="lightbox" id="lightbox">
+<div id="lightbox" class="lightbox hidden">
 
-        <div class="lightbox-content">
+    <button id="closeBtn" class="close-btn" aria-label="Close">
+        &times;
+    </button>
 
-            <button class="close" id="closeBtn">
-                &times;
+    <button id="prevBtn" class="navigation-btn prev" aria-label="Previous image">
+        &#10094;
+    </button>
+
+    <div class="lightbox-content">
+
+        <img id="lightboxImage" src="" alt="">
+
+        <div class="lightbox-info">
+            <h2 id="lightboxTitle"></h2>
+            <p id="lightboxCategory"></p>
+
+            <button id="favoriteBtn" class="favorite-lightbox">
+                <span id="favoriteIcon">♡</span>
+                <span id="favoriteText">Favorite</span>
             </button>
-
-            <button class="prev" id="prevBtn">
-                &#10094;
-            </button>
-
-            <img id="lightboxImage" src="" alt="">
-
-            <button class="next" id="nextBtn">
-                &#10095;
-            </button>
-
-            <div class="lightbox-title" id="lightboxTitle"></div>
-
         </div>
 
     </div>
 
+    <button id="nextBtn" class="navigation-btn next" aria-label="Next image">
+        &#10095;
+    </button>
+
+</div>
+
 
 </body>
 </html>
+
